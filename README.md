@@ -25,7 +25,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, funique: true, oreign_key: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :group_users
