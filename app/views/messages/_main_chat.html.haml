@@ -1,10 +1,14 @@
-.messages
-  = render @messages
-.form
-  = form_for [@group, @message] do |f|
-    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-    .form__mask
-      = f.label :image, class: 'form__mask__image' do
-        = icon('fas', 'image', class: 'icon')
-        = f.file_field :image, class: 'hidden'
-    = f.submit 'Send', class: 'form__submit'
+.chat
+  .header
+    .left-header
+      %h2 #{@group.name}
+      .left-header__members
+        Members:
+        - @group.users.each do |user|
+          %span.chat-header__user.member #{user.name}
+    .right-header
+      = link_to 'Edit', edit_group_path(@group), class: 'right-header__button'
+  .messages
+    = render @messages
+  .form
+    = render "shared/form"

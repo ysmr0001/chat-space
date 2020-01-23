@@ -5,6 +5,8 @@
     height: 100px;
     padding: 0 40px;
     .left-header {
+      font-size: 30px;
+      margin-top: 28px;
       float: left;
       &__title {
         color: #333;
@@ -99,7 +101,7 @@
       font-size: 16px;
       height: 50px;
       margin-left: 15px;
-      padding: 0 30px;
+      padding: 20px 40px;
     }
   }
 }
